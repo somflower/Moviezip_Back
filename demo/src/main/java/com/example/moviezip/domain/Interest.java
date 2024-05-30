@@ -1,6 +1,6 @@
 package com.example.moviezip.domain;
 
-public class Interest extends User{
+public class Interest extends Account {
     private Long id;
     private String genre;
 

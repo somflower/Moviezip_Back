@@ -4,7 +4,7 @@ import com.example.moviezip.domain.Movie;
 
 import java.util.List;
 
-public interface UserService {
+public interface AccountService {
     public void updatePassword(Long id, String newPassword);
     public void updateNickname(Long id, String newNickname);
 

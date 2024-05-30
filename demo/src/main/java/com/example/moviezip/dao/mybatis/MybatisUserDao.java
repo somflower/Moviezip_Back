@@ -2,9 +2,8 @@ package com.example.moviezip.dao.mybatis;
 
 import com.example.moviezip.dao.UserDao;
 import com.example.moviezip.dao.mybatis.mapper.UserMapper;
+import com.example.moviezip.domain.Account;
 import com.example.moviezip.domain.Interest;
-import com.example.moviezip.domain.User;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
@@ -17,7 +16,7 @@ public class MybatisUserDao implements UserDao {
     private UserMapper userMapper;
 
     @Override
-    public User getUserById(Long id) throws DataAccessException {
+    public Account getUserById(Long id) throws DataAccessException {
         return userMapper.getUserById(id);
     }
 
@@ -28,7 +27,7 @@ public class MybatisUserDao implements UserDao {
     }
 
     @Override
-    public User findUser(String hint,String nickname) throws DataAccessException{
+    public Account findUser(String hint, String nickname) throws DataAccessException{
         System.out.println("MybatisUserDao - findUser - hint: " + hint + ", nickname: " + nickname);
         return userMapper.findUser(hint, nickname);
     }
@@ -40,7 +39,7 @@ public class MybatisUserDao implements UserDao {
     }
 
     @Override
-    public User existingNickname(String nickname) throws DataAccessException{
+    public Account existingNickname(String nickname) throws DataAccessException{
         System.out.println("MybatisUserDao - existingNickname - nickname: " + nickname);
         return userMapper.existingUserNickname(nickname);
     }
@@ -52,7 +51,7 @@ public class MybatisUserDao implements UserDao {
     }
 
     @Override
-    public List<User> findAllUser() throws DataAccessException{
+    public List<Account> findAllUser() throws DataAccessException{
         System.out.println("MybatisUserDao - findAllUser");
         return userMapper.findAllUser();
     }
@@ -76,13 +75,13 @@ public class MybatisUserDao implements UserDao {
     }
 
     @Override
-    public void addUser(User user) throws DataAccessException{
-        System.out.println("MybatisUserDao - addUser" + user.getId() + user.getUser_id() + user.getPassword() + user.getHint() + user.getNickname());
-        userMapper.addUser(user);
+    public void addUser(Account account) throws DataAccessException{
+        System.out.println("MybatisUserDao - addUser" + account.getId() + account.getUser_id() + account.getPassword() + account.getHint() + account.getNickname());
+        userMapper.addUser(account);
     }
 
     @Override
-    public User findAllUserInterest(Long id) throws DataAccessException{
+    public Account findAllUserInterest(Long id) throws DataAccessException{
         System.out.println("MybatisUserDao - findAllUserInterest");
         return userMapper.findAllUserInterest(id);
     }

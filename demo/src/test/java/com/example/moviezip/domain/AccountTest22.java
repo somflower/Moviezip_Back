@@ -1,10 +1,7 @@
 package com.example.moviezip.domain;
 
-import com.example.moviezip.dao.ReviewDao;
 import com.example.moviezip.dao.UserDao;
-import com.example.moviezip.dao.mybatis.MybatisReviewDao;
 import com.example.moviezip.dao.mybatis.MybatisUserDao;
-import com.example.moviezip.service.ReviewImpl;
 import junit.framework.TestCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,14 +9,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class) // JUnit 5에서 Spring 테스트와의 통합을 위해 사용
-public class UserTest22 {
+public class AccountTest22 {
 
     @Autowired
     UserDao userDao;
@@ -30,41 +26,41 @@ public class UserTest22 {
     public void testUser() throws Exception{
         System.out.println("테스트");
 
-        User user = userDao.getUserById(3L);
+        Account account = userDao.getUserById(3L);
 
-        TestCase.assertNotNull(user);
-        System.out.println("유저 현재 비번:"+ user.getId()+ user.getPassword());
+        TestCase.assertNotNull(account);
+        System.out.println("유저 현재 비번:"+ account.getId()+ account.getPassword());
 
-        mybatisUserDao.updatePassword(user.getId(),"newPass");
+        mybatisUserDao.updatePassword(account.getId(),"newPass");
 
-        User user1 = userDao.getUserById(3L);
+        Account account1 = userDao.getUserById(3L);
 
-        System.out.println("변경된 유저비번:"+ user1.getPassword());
+        System.out.println("변경된 유저비번:"+ account1.getPassword());
 
         //비번 확인
         String check = "newPass";
-        if (check.equals(user1.getPassword()))
+        if (check.equals(account1.getPassword()))
             System.out.println("맞았다!");
         else
             System.out.println("틀렸다!");
 
         //사용자 찾기
-        User user2 =  mybatisUserDao.findUser("kim", "mimi");
-        if (user2 != null) {
-            System.out.println("찾은 유저 아이디:" + user2.getUser_id());
+        Account account2 =  mybatisUserDao.findUser("kim", "mimi");
+        if (account2 != null) {
+            System.out.println("찾은 유저 아이디:" + account2.getUser_id());
         } else {
             System.out.println("사용자를 찾을 수 없습니다.");
         }
 
         //사용자 닉네임 수정
-        User user3 = userDao.getUserById(3L);
-        mybatisUserDao.updateNickname(user.getId(), "dydy");
-        User user4 = userDao.getUserById(3L);
-        System.out.println("변경된 유저닉네임:"+ user4.getNickname());
+        Account account3 = userDao.getUserById(3L);
+        mybatisUserDao.updateNickname(account.getId(), "dydy");
+        Account account4 = userDao.getUserById(3L);
+        System.out.println("변경된 유저닉네임:"+ account4.getNickname());
 
         //중복 닉네임 체크
-        User user5 = mybatisUserDao.existingNickname("dydy");
-        if(user5 != null) {
+        Account account5 = mybatisUserDao.existingNickname("dydy");
+        if(account5 != null) {
             System.out.println("사용 중인 닉네임입니다");
         }else {
             System.out.println("사용 가능한 닉네임입니다");
@@ -75,13 +71,13 @@ public class UserTest22 {
 //        mybatisUserDao.deleteUser(user6.getId());
 
         //사용자 전체 출력
-        List<User> allUser = mybatisUserDao.findAllUser();
-        for (User user7 : allUser) {
-            System.out.println("ID: " + user7.getId());
-            System.out.println("USERID: " + user7.getUser_id());
-            System.out.println("NICKNAME: " + user7.getNickname());
-            System.out.println("PASSWORD: " + user7.getPassword());
-            System.out.println("HINT: " + user7.getHint());
+        List<Account> allAccount = mybatisUserDao.findAllUser();
+        for (Account account7 : allAccount) {
+            System.out.println("ID: " + account7.getId());
+            System.out.println("USERID: " + account7.getUser_id());
+            System.out.println("NICKNAME: " + account7.getNickname());
+            System.out.println("PASSWORD: " + account7.getPassword());
+            System.out.println("HINT: " + account7.getHint());
 
             System.out.println("--------------------------");
         }
@@ -116,14 +112,14 @@ public class UserTest22 {
 //        userDao.addInterest(interest); //관심사도 추가
 
         //사용자 취향까지 출력
-        User user10 = mybatisUserDao.findAllUserInterest(3L);
+        Account account10 = mybatisUserDao.findAllUserInterest(3L);
         System.out.println("--------------------------");
-        System.out.println("ID: " + user10.getId());
-        System.out.println("USERID: " + user10.getUser_id());
-        System.out.println("NICKNAME: " + user10.getNickname());
-        System.out.println("PASSWORD: " + user10.getPassword());
-        System.out.println("HINT: " + user10.getHint());
-        System.out.println("INTEREST: " + user10.getInterest().getGenre());
+        System.out.println("ID: " + account10.getId());
+        System.out.println("USERID: " + account10.getUser_id());
+        System.out.println("NICKNAME: " + account10.getNickname());
+        System.out.println("PASSWORD: " + account10.getPassword());
+        System.out.println("HINT: " + account10.getHint());
+        System.out.println("INTEREST: " + account10.getInterest().getGenre());
         System.out.println("--------------------------");
 
         ///ㅁㅇㄹㅁㄴㅇㄹ맨ㄹ야ㅐㅁ

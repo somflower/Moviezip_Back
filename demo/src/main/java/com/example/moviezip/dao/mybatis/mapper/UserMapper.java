@@ -1,7 +1,7 @@
 package com.example.moviezip.dao.mybatis.mapper;
 
+import com.example.moviezip.domain.Account;
 import com.example.moviezip.domain.Interest;
-import com.example.moviezip.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -9,24 +9,24 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    User getUserById(Long id);
+    Account getUserById(Long id);
 
     void updateUserPassword(@Param("id") Long id, @Param("newPassword") String newPassword);
 
     //힌트 통해 사용자 찾기
-    User findUser(@Param("hint") String hint, @Param("nickname") String nickname);
+    Account findUser(@Param("hint") String hint, @Param("nickname") String nickname);
 
     //사용자 닉네임 수정
     void updateUserNickname(@Param("id") Long id, @Param("newNickname") String newPassword);
 
     //사용자 중복 닉네임 체크
-    User existingUserNickname(@Param("nickname") String nickname);
+    Account existingUserNickname(@Param("nickname") String nickname);
 
     //사용자 삭제
     void deleteUser(@Param("id") Long id);
 
     //사용자 전체 리스트 출력
-    List<User> findAllUser();
+    List<Account> findAllUser();
 
     void addInterest(Interest interest);
 
@@ -34,9 +34,9 @@ public interface UserMapper {
 
     void updateInterest(@Param("id")Long id, @Param("genre")String genre);
 
-    void addUser(User user);
+    void addUser(Account account);
 
-    User findAllUserInterest(@Param("id") Long id);
+    Account findAllUserInterest(@Param("id") Long id);
 
 
 }

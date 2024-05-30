@@ -23,6 +23,14 @@ spring:
     livereload:
       enabled: 'true'
 
+  jpa:
+  show-sql: true
+  properties:
+    hibernate:
+      default_batch_fetch_size: 1000
+  hibernate:
+    ddl-auto: create
+
 mybatis:
   type-aliases-package: com.example.moviezip.domain
   #  mapper-locations: com/example/jpetstore/dao/mybatis/mapper/**/*.xml
