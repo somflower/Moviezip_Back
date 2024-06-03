@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.moviezip.dao.mybatis.mapper.LoginMapper">
   <!-- 사용자 로그인, 사용자 정보를 User 객체 형태로 가져옴-->
-  <select id="userLogin" resultType="com.example.moviezip.domain.Account">
+  <select id="userLogin" resultType="com.example.moviezip.domain.User">
     SELECT *
     FROM USER_TABLE
     WHERE USER_TABLE.USER_ID = #{userId} and USER_TABLE.PASSWORD = #{password}

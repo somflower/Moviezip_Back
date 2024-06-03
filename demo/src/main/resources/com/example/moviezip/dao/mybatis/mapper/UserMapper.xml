@@ -59,4 +59,12 @@
         FROM MOVIE
         WHERE MOVIE_TITLE LIKE '%' || #{keyword} || '%'
     </select>
+
+
+    <select id="findByUserId" parameterType="string" resultType="com.example.moviezip.domain.User">
+        SELECT *
+        FROM USER_TABLE
+        WHERE USER_TABLE.USERID = #{userId}
+    </select>
+
 </mapper>

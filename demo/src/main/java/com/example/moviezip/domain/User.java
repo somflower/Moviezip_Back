@@ -5,15 +5,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class Account implements UserDetails{
+public class User{
     private Long id;
-    private String user_id;
+    private String userId;
     private String password;
     private String nickname;
     private String hint;
     private Interest interest;
 
-    public Account() {
+    public User() {
     }
 
     public Long getId() {
@@ -24,15 +24,14 @@ public class Account implements UserDetails{
         this.id = id;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    @Override
     public String getPassword() {
         return password;
     }
@@ -57,44 +56,11 @@ public class Account implements UserDetails{
         this.hint = hint;
     }
 
-
     public Interest getInterest() {
         return interest;
     }
 
     public void setInterest(Interest interest) {
         this.interest = interest;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getUsername() {
-        return this.user_id;
-    }
-
-
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
     }
 }
