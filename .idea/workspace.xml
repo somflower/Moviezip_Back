@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a7d57ef-2873-46e8-8ed0-390a1bfd60d1" name="Changes" comment="pull 받으려고 commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a7d57ef-2873-46e8-8ed0-390a1bfd60d1" name="Changes" comment="[feat] 머지 #61">
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/mybatis/MybatisUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/mybatis/MybatisUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/mybatis/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/dao/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/moviezip/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.MoviezipApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "add/algorithm",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/movie_zip/Munhak.Zip_Front",
     "node.js.detected.package.eslint": "true",
@@ -670,8 +675,8 @@
     <MESSAGE value="[fix/#57] wishmapper.xml &amp; review 도메인 수정" />
     <MESSAGE value="[merge] #56" />
     <MESSAGE value="pull" />
-    <MESSAGE value="pull 받으려고 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="pull 받으려고 commit" />
+    <MESSAGE value="[feat] 머지 #61" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] 머지 #61" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
